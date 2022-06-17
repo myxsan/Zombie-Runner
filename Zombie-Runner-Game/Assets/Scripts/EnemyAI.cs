@@ -36,6 +36,10 @@ public class EnemyAI : MonoBehaviour
         {
             isProvoked = true;
         }
+        else
+        {
+            GetComponent<Animator>().SetTrigger("Idle");
+        }
     }
 
     private void EngageTarget()
@@ -53,12 +57,16 @@ public class EnemyAI : MonoBehaviour
 
     private void ChaseTarget()
     {
+        GetComponent<Animator>().SetTrigger("Move");
+        GetComponent<Animator>().SetBool("Attack", false);
+
         navMeshAgent.SetDestination(target.position);
     }
 
     private void AttackTarget()
     {
-        Debug.Log("Attacked to target!");
+        GetComponent<Animator>().SetBool("Attack", true);
+        //Debug.Log("Attacked to target!");
     }
 
     private void OnDrawGizmosSelected() {
