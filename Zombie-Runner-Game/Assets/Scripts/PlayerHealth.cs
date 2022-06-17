@@ -13,7 +13,7 @@ public class PlayerHealth : MonoBehaviour
 
         if(playerHitPoints <= 0 )
         {
-            Debug.Log("Player Death");
+            GetComponent<DeathHandler>().HandleDeath();
         }
     }
 
