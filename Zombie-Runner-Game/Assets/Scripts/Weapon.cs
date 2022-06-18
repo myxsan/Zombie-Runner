@@ -6,6 +6,8 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     [SerializeField] Camera FPCamera;
+    [SerializeField] Ammo ammoSlot; 
+
     [SerializeField] float range = 100f;
     [SerializeField] float damage = 100f;
     [SerializeField] ParticleSystem muzzleFlash;
@@ -21,8 +23,12 @@ public class Weapon : MonoBehaviour
 
     private void Shoot()
     {
-        PlayMuzzleFlash();
-        ProcessRaycast();
+        if(ammoSlot.GetCurrentAmmo() > 0)
+        {
+            PlayMuzzleFlash();
+            ProcessRaycast();
+            ammoSlot.ReduceCurrentAmmo();
+        }
     }
 
     private void ProcessRaycast()
