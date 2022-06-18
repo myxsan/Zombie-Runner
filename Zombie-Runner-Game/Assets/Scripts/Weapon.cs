@@ -17,6 +17,10 @@ public class Weapon : MonoBehaviour
     [SerializeField] bool ableHold = false; 
 
     bool canShoot = true;
+
+    private void OnEnable() {
+        canShoot = true;
+    }
     void Update()
     {
         if(ableHold)
