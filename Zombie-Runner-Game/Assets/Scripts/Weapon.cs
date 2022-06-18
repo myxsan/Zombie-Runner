@@ -23,14 +23,14 @@ public class Weapon : MonoBehaviour
         {
             if(Input.GetMouseButton(0))
             {
-                Shoot();
+                StartCoroutine(Shoot());
             }
         }
         else
         {
             if(Input.GetMouseButtonDown(0))
             {
-                Shoot();
+                StartCoroutine(Shoot());
             }
         }
     }
