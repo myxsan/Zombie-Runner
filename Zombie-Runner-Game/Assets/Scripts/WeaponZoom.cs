@@ -16,7 +16,7 @@ public class WeaponZoom : MonoBehaviour
     bool zoomedInToggle = false;
 
     private void Start() {
-        fpsController = GetComponent<RigidbodyFirstPersonController>();    
+        fpsController = GetComponentInParent<RigidbodyFirstPersonController>();    
     }
 
     private void Update() {

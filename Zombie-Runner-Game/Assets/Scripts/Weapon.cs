@@ -8,26 +8,48 @@ public class Weapon : MonoBehaviour
     [SerializeField] Camera FPCamera;
     [SerializeField] Ammo ammoSlot; 
 
-    [SerializeField] float range = 100f;
-    [SerializeField] float damage = 100f;
     [SerializeField] ParticleSystem muzzleFlash;
     [SerializeField] GameObject hitEffect;
 
+    [SerializeField] float range = 100f;
+    [SerializeField] float damage = 100f;
+    [SerializeField] float timeBetweenShoots = 0.2f;
+    [SerializeField] bool ableHold = false; 
+
+    bool canShoot = true;
     void Update()
     {
-        if(Input.GetButtonDown("Fire1"))
+        if(ableHold)
         {
-            Shoot();
+            if(Input.GetMouseButton(0))
+            {
+                Shoot();
+            }
+        }
+        else
+        {
+            if(Input.GetMouseButtonDown(0))
+            {
+                Shoot();
+            }
         }
     }
 
-    private void Shoot()
+    private IEnumerator Shoot()
     {
-        if(ammoSlot.GetCurrentAmmo() > 0)
+        if(canShoot)
         {
-            PlayMuzzleFlash();
-            ProcessRaycast();
-            ammoSlot.ReduceCurrentAmmo();
+            canShoot = false;
+            if(ammoSlot.GetCurrentAmmo() > 0)
+            {
+                PlayMuzzleFlash();
+                ProcessRaycast();
+                ammoSlot.ReduceCurrentAmmo();
+
+                StartCoroutine(ShootDelay());
+            }
+            yield return new WaitForSeconds(timeBetweenShoots);
+            canShoot = true;
         }
     }
 
@@ -60,5 +82,12 @@ public class Weapon : MonoBehaviour
         GameObject impact = Instantiate(hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
 
         Destroy(impact, 0.1f);
+    }
+
+    private IEnumerator ShootDelay()
+    {
+        canShoot = false;
+        yield return new WaitForSeconds(timeBetweenShoots);
+        canShoot = true;
     }
 }
