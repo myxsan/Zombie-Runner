@@ -185,7 +185,7 @@ GameObject:
   - component: {fileID: 1320240982643713621}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -342,7 +342,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f735054d9189bb418c2f851ec806146, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoAmount: 10
+  ammoSlots:
+  - ammoType: 0
+    ammoAmount: 25
+  - ammoType: 1
+    ammoAmount: 7
 --- !u!1 &3819126090959039026
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,6 +392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8ababd950bc3844b873956ed7db6206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentWeapon: 0
 --- !u!1001 &5128889894771788532
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -395,6 +400,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2662688975667257427}
     m_Modifications:
+    - target: {fileID: 23166875, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
+      propertyPath: range
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 23166875, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
       propertyPath: FPCamera
       value: 
@@ -516,6 +525,10 @@ PrefabInstance:
     - target: {fileID: 3989081712853067769, guid: 04d67eb663cdf294b82cc88e96ddd482, type: 3}
       propertyPath: m_Name
       value: Shoutgun
+      objectReference: {fileID: 0}
+    - target: {fileID: 4369447107898474253, guid: 04d67eb663cdf294b82cc88e96ddd482, type: 3}
+      propertyPath: range
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4369447107898474253, guid: 04d67eb663cdf294b82cc88e96ddd482, type: 3}
       propertyPath: FPCamera
