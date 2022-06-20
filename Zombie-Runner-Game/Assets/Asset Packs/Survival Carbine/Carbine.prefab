@@ -347,12 +347,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FPCamera: {fileID: 0}
   ammoSlot: {fileID: 0}
+  ammoType: 0
+  ammoText: {fileID: 0}
+  range: 25
+  damage: 32
+  timeBetweenShoots: 0.2
+  ableHold: 1
   muzzleFlash: {fileID: 4650315171388421047}
   hitEffect: {fileID: 5020059189431116353, guid: c2023a50546da2d4fa1b898348880948, type: 3}
-  range: 100
-  damage: 32
-  shootDelay: 0.15
-  ableHold: 1
 --- !u!114 &9057021882223451651
 MonoBehaviour:
   m_ObjectHideFlags: 0

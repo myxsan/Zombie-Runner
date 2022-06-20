@@ -377,12 +377,13 @@ MonoBehaviour:
   FPCamera: {fileID: 0}
   ammoSlot: {fileID: 0}
   ammoType: 1
-  muzzleFlash: {fileID: 8033570554174831664}
-  hitEffect: {fileID: 5020059189431116353, guid: c2023a50546da2d4fa1b898348880948, type: 3}
-  range: 30
+  ammoText: {fileID: 0}
+  range: 10
   damage: 66
   timeBetweenShoots: 0.2
   ableHold: 0
+  muzzleFlash: {fileID: 8033570554174831664}
+  hitEffect: {fileID: 5020059189431116353, guid: c2023a50546da2d4fa1b898348880948, type: 3}
 --- !u!1 &3989081712853067771
 GameObject:
   m_ObjectHideFlags: 0

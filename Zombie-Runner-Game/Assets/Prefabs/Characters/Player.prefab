@@ -402,10 +402,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 2662688975667257427}
     m_Modifications:
     - target: {fileID: 23166875, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
-      propertyPath: range
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 23166875, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
       propertyPath: FPCamera
       value: 
       objectReference: {fileID: 2000000}
@@ -588,10 +584,6 @@ PrefabInstance:
     - target: {fileID: 3989081712853067769, guid: 04d67eb663cdf294b82cc88e96ddd482, type: 3}
       propertyPath: m_Name
       value: Shoutgun
-      objectReference: {fileID: 0}
-    - target: {fileID: 4369447107898474253, guid: 04d67eb663cdf294b82cc88e96ddd482, type: 3}
-      propertyPath: range
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4369447107898474253, guid: 04d67eb663cdf294b82cc88e96ddd482, type: 3}
       propertyPath: FPCamera
